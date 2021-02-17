@@ -1,0 +1,75 @@
+﻿@using StudentApp.Models
+@model IEnumerable<StudentApp.Models.Student>
+
+@{
+    ViewData["Title"] = "Students";
+}
+
+
+<p>
+    <br />
+
+    <h1> STUDENT LIST</h1>
+    <hr />
+    <br />
+    <a asp-action="Create" class="btn btn-outline-primary">Add New Student</a>
+    <br />
+    <br />
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <h6>Image</h6>
+            </th>
+            <th>
+                <h6>Usn</h6>
+            </th>
+            <th>
+                <h6>Email</h6>
+            </th>
+
+            <th>
+                <h6>Department Name</h6>
+            </th>
+            <th>
+                <h6>Actions</h6>
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @if (item.ImageUrl != null)
+                {
+                    <img src="@Url.Content(item.ImageUrl)" alt="@Url.Content(item.Usn) Photo" />
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+
+            <td>
+                    @Html.DisplayFor(modelItem => item.Dep_Name)
+            </td>
+      
+
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) /
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) /
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

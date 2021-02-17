@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<style>
+
+    img {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        width: 70px;
+        height: 70px;
+    }
+    h1{
+        text-align:center;
+    }
+    h6{
+        text-align:center;
+    }
+    td {
+        text-align: center;
+    }
+</style>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - StudentApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        
+    </header>
+    <hr />
+    <h6>Assignment_2 Create a crud web app with MongoDb</h6>
+
+    <hr />
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
